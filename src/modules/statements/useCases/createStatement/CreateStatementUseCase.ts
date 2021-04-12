@@ -22,6 +22,7 @@ class CreateStatementUseCase {
       throw new CreateStatementError.UserNotFound();
     }
 
+    // se usarmos um || aqui podemos fazer a validação de saldo suficiente ou n para o transfer
     if (type === "withdraw") {
       const { balance } = await this.statementsRepository.getUserBalance({
         user_id,
